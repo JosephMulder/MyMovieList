@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS movies;
+CREATE DATABASE IF NOT EXISTS MyMovieListdb;
 
-USE movies;
+USE MyMovieListdb;
 
 CREATE TABLE IF NOT EXISTS users (
     id int not null auto_increment primary key,
