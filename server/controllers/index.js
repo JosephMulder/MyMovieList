@@ -8,11 +8,14 @@ module.exports = {
                     console.log(err);
                 } else {
                     // console.log('we just get request users', result);
-                    let userData = {
-                        id: result[0].id,
-                        username: result[0].username
+                    if (result[0] !== undefined) {
+
+                        let userData = {
+                            id: result[0].id,
+                            username: result[0].username
+                        }
+                        req.session.userData = userData;
                     }
-                    req.session.userData = userData;
                     console.log(req.session, 'this is in controllers');
                     res.send(result);
                 }
