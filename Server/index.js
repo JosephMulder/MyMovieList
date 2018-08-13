@@ -105,8 +105,6 @@ app.post('/profile', controller.profile.post);
 app.get('/profile', controller.profile.get);
 
 
-
-
 //authentification maybe
 
 app.post('/signup', controller.users.post);
