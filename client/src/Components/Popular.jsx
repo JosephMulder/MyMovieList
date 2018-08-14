@@ -77,15 +77,17 @@ class Popular extends Component {
               <div id="topgross">
                <ul className="topmovies">
                    <li className="movie_top" id="singleout">
-                    <div className="movie_description">
+                    <div className="movie_description additionalpad">
                        <strong>Top Grossing Films</strong>
                     </div> 
                    </li>
                     {this.state.top.map((movie, index) => (
-                        <li className="movie_top" key={index} onClick={() => this.veiwSingleMovie(movie)}>
+                        <li className="movie_top hoverli" key={index} onClick={() => this.veiwSingleMovie(movie)}>
+                            <button className="makelibutton">
                             <div className="movie_description">
                                 {movie.title}
                             </div> 
+                            </button>
                         </li> 
                     ))}
 
@@ -96,15 +98,17 @@ class Popular extends Component {
               <div id="topgross">
                <ul className="topmovies">
                    <li className="movie_top" id="singleout">
-                    <div className="movie_description">
+                    <div className="movie_description additionalpad">
                        <strong>Popular Television Shows</strong>
                     </div> 
                    </li>
                     {this.state.tele.map((tv, index) => (
-                        <li className="movie_top" key={index} onClick={() => this.veiwSingleMovie(tv)} >
+                        <li className="movie_top hoverli" key={index} onClick={() => this.veiwSingleMovie(tv)} >
+                            <button className="makelibutton">
                             <div className="movie_description">
                                 {tv.name}
                             </div> 
+                            </button>
                         </li> 
                     ))}
 

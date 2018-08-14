@@ -77,7 +77,7 @@ class Profile extends React.Component {
                 </div> 
              </li>
             {this.state.favorites.map((movie, index) => (
-            <li className="movie_top" key={index} >
+            <li className="movie_top hoverli" key={index} >
               <div className="movie_description">
                 {movie.moviename}
               </div> 
@@ -97,7 +97,7 @@ class Profile extends React.Component {
         </div>
 
           {this.state.watchedMovies.map((movie, index) => (
-              <div className="txn-row" key={index}>
+              <div className="txn-row hoverli" key={index}>
                     <div className="txn-data">{movie.moviename}</div>
 
                     <div className="txn-data">

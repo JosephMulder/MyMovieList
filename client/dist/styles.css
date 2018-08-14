@@ -8,7 +8,6 @@ body{
 }
 .navbar-default {
   background-color: #dde1ec;
-
 }
 
 .movies {
@@ -186,8 +185,6 @@ section.inner_content {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  /* position: relative; */
-
 }
 
 /* Next one with url image */
@@ -248,15 +245,6 @@ p6 {
 
 }
 
-/* .profilebanner {
-  width: 35%;
-  background-color: white;
-  box-sizing: border-box;
-  margin: 1.5%;
-  display: inline-block;
-  position: absolute;
-} */
-
 .profilebanner {
   background-color: white;
   box-sizing: border-box;
@@ -277,22 +265,15 @@ p6 {
 
 h1 {
   font-size: 1.5em;
-  /* padding: .5em; */
   margin: 2%;
-  /* float: right; */
 }
 
 #topgross2 {
   padding: 0;
   margin: 4.0%;
   margin-top: 0%;
-  /* margin: 1.2em; */
 }
-/* .favorites {
-  float: left;
-  margin-top: 25%;
-  width: 35%;
-} */
+
 #sidebar2 {
   color: black;
   width: 35%;
@@ -305,56 +286,9 @@ h1 {
 
 
 
-
-
-
-
 /* LOGIN PAGE CSS */
 /*/////////////////////////////////////////////////
 ////////////////////////////////////////////////*/
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-/* @font-face {
-  font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
-}
-
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
-} */
-
-
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
-
-/* * {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
-}
-
-body, html {
-	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
-} */
 
 input {
 	outline: none;
@@ -557,7 +491,6 @@ input.input {
   border-radius: 5%;
   float: right;
   margin: 1.5%;
-  /* margin-left: 35%; */
   margin-top: 30%;
   position: absolute; 
   z-index: 3;
@@ -568,7 +501,6 @@ input.input {
   border-radius: 5%;
   float: right;
   margin: 1.5%;
-  /* margin-left: 35%; */
   margin-top: 34%;
   position: absolute; 
   z-index: 3;
@@ -579,13 +511,10 @@ input.input {
   border-radius: 5%;
   float: right;
   margin: 1.5%;
-  /* margin-left: 35%; */
   margin-top: 38%;
   position: absolute; 
   z-index: 3;
 }
-
-
 
 
 /* Profile table css */
@@ -625,10 +554,6 @@ input.input {
   background-color: #ffffff;
 }
 
-.txn-row:hover {
-  color: #00a07b;
-}
-
 .txn-data {
   display: flex;
   flex-flow: row nowrap;
@@ -645,4 +570,25 @@ input.input {
 
 .scorebar {
   width: 6em;
+}
+
+
+.hoverli:hover {
+  color:#00a07b;
+}
+
+.makelibutton {
+  background:none;
+  border:none;
+  text-align: left;
+}
+
+.additionalpad {
+  padding-left: 5%;
+}
+
+.hovermovie:hover {
+  background-color: rgb(215, 219, 221);
+  border-color: rgb(215, 219, 221);
+  cursor: pointer;
 }
