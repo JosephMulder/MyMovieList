@@ -172,7 +172,7 @@ class App extends React.Component {
                 <footer className="footer">
                     <p id="maker">Made by:<br></br> Joseph Mulder</p> 
                     <a  className="footergit" href="https://github.com/JosephMulder"><img className="githubimage" src="https://i.imgur.com/DWOpELI.png"/></a>
-                    <a className="backtotop" onClick={this.totop}>Back to Top</a>
+                    <a className="backtotop" onClick={this.totop}><img className="backtotopimage" src="http://earnscliffe.co.uk.gridhosted.co.uk/wp-content/uploads/2014/06/back-to-top.png"/></a>
                 </footer>
             </div>
         )

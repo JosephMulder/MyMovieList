@@ -615,10 +615,23 @@ img.githubimage {
   vertical-align: sub;
 }
 
+.githubimage:hover {
+  opacity: .7;
+}
+
 .footergit {
   padding-left: 5%;
 }
 
 .backtotop {
-  margin-left: 31%;
+  float: right;
+}
+
+.backtotop:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+img.backtotopimage {
+  width: 28%;
 }
