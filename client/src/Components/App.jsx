@@ -153,6 +153,10 @@ class App extends React.Component {
         })
       }
 
+      totop() {
+        window.scrollTo(0, 0);
+      }
+
       componentWillMount() {
           this.checkAuth();
       }
@@ -168,7 +172,7 @@ class App extends React.Component {
                 <footer className="footer">
                     <p id="maker">Made by:<br></br> Joseph Mulder</p> 
                     <a  className="footergit" href="https://github.com/JosephMulder"><img className="githubimage" src="https://i.imgur.com/DWOpELI.png"/></a>
-                    <a className="backtotop" href="#top">Back to Top</a>
+                    <a className="backtotop" onClick={this.totop}>Back to Top</a>
                 </footer>
             </div>
         )

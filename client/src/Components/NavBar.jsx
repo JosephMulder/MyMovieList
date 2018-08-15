@@ -24,7 +24,7 @@ class NavBar extends Component {
     render() {
         return (
             <Navbar id="colorme">
-              <Navbar.Header id="top">
+              <Navbar.Header>
                 <Navbar.Brand>
                     <a href="/">MyMovieList</a>
                 </Navbar.Brand>
