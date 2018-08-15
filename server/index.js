@@ -87,10 +87,10 @@ app.get('/youtube', function(req, res) {
 
 
 app.get('/search', function(req, res) {
-        console.log('is it this', req.query[0]);
+
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${api}&language=en-US&page=1&include_adult=false&query=${req.query[0]}`)
     .then((response) => {
-        console.log('this actually worked?', response.data.results[0]);
+
         res.send(response.data.results[0]);
     })
     .catch((err) => {
@@ -115,36 +115,19 @@ app.get('/logout', function(req,res){
     delete req.session.userData
     res.redirect('/')
   });
-    // Make query to database where 
-    // we check if user exists
-    // if not we insert them into database!
-//     controller.users.post();
-// );
+
 app.get('/auth', function(req,res){
-    console.log('this thing ran hjrder', req.session);
     res.send(req.session.userData);
   });
 
 function isAuth(req, res, next) {
-    console.log('this thing actually fucking runs', req.session);
     if(req.session.userData) {
-        console.log('MUSHIEMUSHIE', req.session);
       next(); 
     } else {
-        console.log('YUI', req.session);
       res.redirect('/auth');
     } 
   }
 
-// OK SO THEY SET THE USERS SESSION WHEN THEY LOGIN AND SINGUP
-// BUT DO NOT DO THE AUTH THING AT THE FUNCTION
-// SO I NEEED SOMETHING ELSE TO DO THE AUTH FOR 
-// MAYBE DIRECTLY AFTER WE MAKE A GET REQUEST TO '/auth' IN THE CLIENT 
-// THAT WILL THEN CHECK IF THE USER IS AUTH 
-// AND SOMEHOW THAT WILL MAKE IT PERSIST? MAYBE?
-// FUCK I DON""T KNOW"
-// SO THE USER LOGINS AND IT IMMEDIATELY CHECKS FOR AUTH AND THEN WE NEED IT TO HAPPEN EVERY TIME ON RELOAD
-// WE MIGHT HAVE THIS SOMEWHAT IN PLACE ALREADY
 
 // Wrong endpoint handler 
 app.get('*', function(req, res){

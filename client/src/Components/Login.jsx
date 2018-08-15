@@ -15,20 +15,17 @@ class Login extends React.Component {
         this.setState({
             email: e.target.value
         })
-        console.log(this.state.email);
     }
     handlePasswordInput(e) {
         this.setState({
             password: e.target.value
         })
-        console.log(this.state.password);
     }
 
     render() {
         return (
-            <div className="container-login">
+            <div className="container-login login-pic">
             <div className="wrap-login">
-              <div className="login-pic" style={{backgroundImage:`url("https://images.unsplash.com/photo-1512601086497-37250d726de8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9004b9f8bc2b3351406e5be7213eea79&auto=format&fit=crop&w=1500&q=80")`}}></div>
 
                   <span className="login-form-title" style={{paddingBottom:"36px"}}>
                     Account Login

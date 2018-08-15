@@ -7,29 +7,30 @@ class Profile extends React.Component {
         super(props);
         this.state = {
             user: this.props.user,
-            favorites: [{title:"Harry Potter"}, {title: "Kong Fu Panda"}],
-            watchedMovies: [{}],
+            favorites: [{moviename: "Add movies to favorites"}],
+            watchedMovies: [{moviename: "Add movies to watched list", score: "Rate"}],
             grades: [0,1,2,3,4,5,6,7,8,9,10]
         }
         this.watchedMovies = this.watchedMovies.bind(this);
     }
 
     watchedMovies() {
+
         if (this.state.user) {
+
           axios.get('/profile', {
               params: {username: this.state.user}
           })
             .then((res) => {
-                console.log(res, 'axios get request for profile!');
-
                 var newFavorites = [];
-
                 if (res.data.length === 0) {
+
                     this.setState({
-                        watchedMovies: [{moviename: "Add movies to watched list"}],
+                        watchedMovies: [{moviename: "Add movies to watched list", score: "Rate"}],
                         favorites: [{moviename: "Add movies to favorites"}]
                     })
                 } else {
+
                     for (var i = 0; i < res.data.length; i++) {
     
                         if (res.data[i].favorites === "true") {
@@ -90,6 +91,10 @@ class Profile extends React.Component {
             ))}
           </ul>
         </div>
+    </div>
+
+    <div className="filler">
+           pushing empty profiles down 
     </div>
 </div>
 

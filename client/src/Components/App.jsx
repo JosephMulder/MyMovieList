@@ -25,7 +25,6 @@ class App extends React.Component {
         this.loginbutton = this.loginbutton.bind(this);
         this.checkAuth = this.checkAuth.bind(this);
         this.logout = this.logout.bind(this);
-        this.watchedMovies = this.watchedMovies.bind(this);
     }
 
     searchrequest(input) {
@@ -33,7 +32,6 @@ class App extends React.Component {
           params: input
       })
       .then((res) => {
-          console.log('this is the res in app', res.data);
           if (this.state.moviedescription) {
             var opposite = !this.state.moviedescription;
           } else {
@@ -65,7 +63,6 @@ class App extends React.Component {
     signup(username, password) {
         axios.post('/signup', {username: username, password: password})
             .then((response) => {
-                console.log(response, response.data);
                 this.setState({loggedIn:true, user: response.data.username, loginbutton: false})
             })
             .catch((err) => {
@@ -75,13 +72,10 @@ class App extends React.Component {
     }
 
     login(username, password) {
-
-        console.log(username, password, 'login input is here!');
         axios.get("/login", {
             params: {username: username, password: password}
         })
             .then((response) => {
-                console.log(response, 'login response here!signin response');
                 this.setState({loggedIn:true, user:response.data[0].username, loginbutton: false});
                 this.checkAuth();
             })
@@ -92,16 +86,16 @@ class App extends React.Component {
     }
 
     logout() {
-        console.log('logout runs on client');
         axios.get('/logout')
             .then((res) => {
-              console.log('res logout', res)
               this.setState({
                 loggedIn: false,
                 user: false
               })
-        })
-            .catch((err) => {console.log(err)})
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
     veiwMovie(info) {
@@ -123,35 +117,23 @@ class App extends React.Component {
         })
     }
 
-    watchedMovies() {
-        if (this.state.username) {
-          axios.get('/profile', {
-              params: {username: this.state.username}
-          })
-            .then((res) => {
-                console.log(res, 'axios get request for profile!');
+
+    checkAuth(){
+        axios.get('/auth')
+            .then(res=>{
+            if(res.data.username){
+
+                this.setState({
+                    loggedIn:true, user:res.data.username, loginbutton: false
+                });
+            } else {
+                console.log('no auth');
+            }
             })
             .catch((err) => {
                 console.log(err);
             })
-        }
     }
-
-
-    checkAuth(){
-        axios.get('/auth').then(res=>{
-          if(res.data.username){
-            // this.setState({
-            //   user : res.data
-            //   })
-            this.setState({loggedIn:true, user:res.data.username, loginbutton: false});
-
-            console.log('option one', res.data, 'more fucking garbage');
-          } else {
-            console.log('option two', res.data, 'more fucking shit');
-          }
-        })
-      }
 
       totop() {
         window.scrollTo(0, 0);
@@ -167,7 +149,7 @@ class App extends React.Component {
                 <NavBar searchrequest={this.searchrequest} searcherror={this.state.searcherror} veiwProfile={this.veiwProfile} loggedIn={this.state.loggedIn} loginbutton={this.loginbutton} logout={this.logout}/>
                 
                 {this.state.loginbutton ? <Login signup={this.signup} login={this.login} /> : 
-                (this.state.showprofile ? (this.state.loggedIn ? <Profile user={this.state.user} watchedMovies={this.watchedMovies}/> : <Login signup={this.signup} login={this.login}/> ): <Popular moviedescription={this.state.moviedescription} veiwMovie={this.veiwMovie} singlemovie={this.state.singlemovie} user={this.state.user}/>)}
+                (this.state.showprofile ? (this.state.loggedIn ? <Profile user={this.state.user} /> : <Login signup={this.signup} login={this.login}/> ): <Popular moviedescription={this.state.moviedescription} veiwMovie={this.veiwMovie} singlemovie={this.state.singlemovie} user={this.state.user}/>)}
                 
                 <footer className="footer">
                     <p id="maker">Made by:<br></br> Joseph Mulder</p> 

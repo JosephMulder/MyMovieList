@@ -292,7 +292,9 @@ h1 {
 
 input {
 	outline: none;
-	border: none;
+  border: none;
+  background-color: white;
+  color: black;
 }
 
 textarea {
@@ -320,8 +322,7 @@ textarea:focus, input:focus {
 }
 
 .wrap-login{
-  width: 90%;
-  background: #fff;
+  width: 60%;
   overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
@@ -331,28 +332,15 @@ textarea:focus, input:focus {
   flex-wrap: wrap;
   align-items: stretch;
   flex-direction: row;
+  margin-bottom: 20%;
 }
 
 .login-pic {
-  width: 50%;
-  background-repeat: no-repeat;
+  background-image: url("http://thewongcouple.com/our-wedding/images/CinemaBackground.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
-  z-index: 1;
 }
 
-.login-pic::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.3);
-}
 
 .login-form {
   width: 50%;
@@ -368,7 +356,8 @@ textarea:focus, input:focus {
 .login-form-title {
   font-family: Poppins-Regular;
   font-size: 20px;
-  color: #555555;
+  color: white;
+
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -382,6 +371,7 @@ textarea:focus, input:focus {
   width: 100%;
   position: relative;
   border: 1px solid #e6e6e6;
+  background-color: white;
 }
 
 .left-input,
@@ -463,11 +453,11 @@ input.input {
   width: 100%;
   height: 50px;
   border-radius: 3px;
-  background: #00ad5f;
+  background: white;
 
   font-family: Montserrat-Bold;
   font-size: 12px;
-  color: #fff;
+  color: black;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -634,4 +624,9 @@ img.githubimage {
 
 img.backtotopimage {
   width: 28%;
+}
+
+.filler {
+  height: 25em;
+  color: #2c3e50;
 }
