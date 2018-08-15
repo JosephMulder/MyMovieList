@@ -161,17 +161,15 @@ class App extends React.Component {
         return (
             <div>
                 <NavBar searchrequest={this.searchrequest} searcherror={this.state.searcherror} veiwProfile={this.veiwProfile} loggedIn={this.state.loggedIn} loginbutton={this.loginbutton} logout={this.logout}/>
-                {/* ok so what we are going to do here is when someone clicks profile button we
-                render out a profile component instead of the popular one makes everything easier */}
-                {/* <Login/> */}
+                
                 {this.state.loginbutton ? <Login signup={this.signup} login={this.login} /> : 
                 (this.state.showprofile ? (this.state.loggedIn ? <Profile user={this.state.user} watchedMovies={this.watchedMovies}/> : <Login signup={this.signup} login={this.login}/> ): <Popular moviedescription={this.state.moviedescription} veiwMovie={this.veiwMovie} singlemovie={this.state.singlemovie} user={this.state.user}/>)}
-                {/* <Popular moviedescription={this.state.moviedescription} veiwMovie={this.veiwMovie} singlemovie={this.state.singlemovie}/> */}
-
-                {/* YOU WILL CHANGE THE WAY ROUTING TO PROFILE WORKS, IF SOMEONE CLICKS ON PROFILE IF THEY ARE LOGGED IN THEY GO TO PROFILE
-                OTHERWISE THEY GET ROUTED TO LOGIN PAGE */}
-                {/* SO were going to leave the current if statement and just add another one inside of the profile part so that it checks if 
-                someone is logged in or not. */}
+                
+                <footer className="footer">
+                    <p id="maker">Made by:<br></br> Joseph Mulder</p> 
+                    <a  className="footergit" href="https://github.com/JosephMulder"><img className="githubimage" src="https://i.imgur.com/DWOpELI.png"/></a>
+                    <a className="backtotop" href="#top">Back to Top</a>
+                </footer>
             </div>
         )
     }

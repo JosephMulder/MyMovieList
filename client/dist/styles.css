@@ -484,6 +484,7 @@ input.input {
 
 #buttoned {
   margin: auto;
+  margin-top: .5em;
 }
 
 .addmovieL {
@@ -591,4 +592,33 @@ input.input {
   background-color: rgb(215, 219, 221);
   border-color: rgb(215, 219, 221);
   cursor: pointer;
+}
+
+
+/* Footer */
+.footer {
+  background: white;
+  width: 100%;
+  padding: 1.5%;
+  /* margin: 1.5%; */
+}
+
+#maker {
+  margin: 0%;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+img.githubimage {
+  width: 4.5%;
+  vertical-align: sub;
+}
+
+.footergit {
+  padding-left: 5%;
+}
+
+.backtotop {
+  margin-left: 31%;
 }

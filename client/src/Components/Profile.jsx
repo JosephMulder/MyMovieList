@@ -24,17 +24,23 @@ class Profile extends React.Component {
 
                 var newFavorites = [];
 
-                for (var i = 0; i < res.data.length; i++) {
-
-                    if (res.data[i].favorites === "true") {
-                        newFavorites.push(res.data[i]);
+                if (res.data.length === 0) {
+                    this.setState({
+                        watchedMovies: [{moviename: "Add movies to watched list"}],
+                        favorites: [{moviename: "Add movies to favorites"}]
+                    })
+                } else {
+                    for (var i = 0; i < res.data.length; i++) {
+    
+                        if (res.data[i].favorites === "true") {
+                            newFavorites.push(res.data[i]);
+                        }
                     }
+                    this.setState({
+                        watchedMovies: res.data,
+                        favorites: newFavorites
+                    })
                 }
-                this.setState({
-                    watchedMovies: res.data,
-                    favorites: newFavorites
-                })
-                console.log(this.state, 'I AM THE SENATE');
             })
             .catch((err) => {
                 console.log(err);
@@ -44,7 +50,6 @@ class Profile extends React.Component {
 
     changescore(event, movie) {
 
-        console.log(event.target.value, movie.moviename, 'HEY ITS ME !!!!');
         axios.post('/profile', {username: this.state.user, moviename: movie.moviename, score: event.target.value, favorites: "null"})
         .then(function (response) {
             console.log(response);

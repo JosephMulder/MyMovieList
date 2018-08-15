@@ -24,7 +24,7 @@ class NavBar extends Component {
     render() {
         return (
             <Navbar id="colorme">
-              <Navbar.Header>
+              <Navbar.Header id="top">
                 <Navbar.Brand>
                     <a href="/">MyMovieList</a>
                 </Navbar.Brand>
@@ -33,18 +33,14 @@ class NavBar extends Component {
     <NavItem eventKey={1} onClick={this.props.veiwProfile}>
       Profile
     </NavItem>
-    {/* <NavItem eventKey={2} href="/">
-      Login/Logout
-    </NavItem> */}
-    {/* <Button >Login</Button> */}
 
-    <NavDropdown eventKey={3} title="Genres" id="basic-nav-dropdown">
+    {/* <NavDropdown eventKey={3} title="Genres" id="basic-nav-dropdown">
       <MenuItem eventKey={3.1}>Action</MenuItem>
       <MenuItem eventKey={3.2}>Comedy</MenuItem>
       <MenuItem eventKey={3.3}>Romance</MenuItem>
       <MenuItem divider />
       <MenuItem eventKey={3.4}>Horror</MenuItem>
-    </NavDropdown>
+    </NavDropdown> */}
   </Nav>
               <Navbar.Collapse>
     {/* What were going to do is have a anonomous function that conditionally invokes two different things based on if someone is logged in */}

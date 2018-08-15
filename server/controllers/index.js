@@ -35,8 +35,8 @@ module.exports = {
     },
     profile: {
         get: function(req, res) {
-            console.log('profile get request controller!');
-            model.profile.get({username: "joe"}, (err, result) => {
+            console.log('profile get request controller!', req.query);
+            model.profile.get({username: req.query.username}, (err, result) => {
                 if (err) {
                     console.log(err);
                 } else {
