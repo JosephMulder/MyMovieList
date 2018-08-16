@@ -1,6 +1,6 @@
 # MyMovieList
 
-A website that allows you to keep track of all the movies you have watched and give them a ratings. Also keeps up with all the latest movies out in theates and some of the most popular movies of all time.  
+A website that allows you to keep track of all the movies you have watched and give them a rating. Also keeps up with all the latest movies out in theates and some of the most popular movies of all time.  
 
 
 ## Built With
@@ -14,6 +14,7 @@ A website that allows you to keep track of all the movies you have watched and g
 ## Authors
 
 Joseph Mulder
+
 [Github](https://github.com/JosephMulder)
 
 ## License

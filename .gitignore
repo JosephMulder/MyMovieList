@@ -1,0 +1,21 @@
+#Configurations
+./server/config.js
+./ecosystem.config.js
+
+
+#built files
+./client/dist/bundle.js
+
+
+
+### Node ###
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.vscode
+package-lock.json
