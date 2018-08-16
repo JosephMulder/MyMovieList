@@ -7,7 +7,6 @@ ecosystem.config.js
 client/dist/bundle.js
 
 
-
 ### Node ###
 lib-cov
 *.seed
