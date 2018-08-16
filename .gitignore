@@ -1,7 +1,7 @@
 #Configurations
-server/config.js
+database/config.js
 ecosystem.config.js
-
+webpack.config.js
 
 #built files
 client/dist/bundle.js
