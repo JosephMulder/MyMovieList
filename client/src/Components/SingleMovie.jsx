@@ -19,7 +19,7 @@ class SingleMovie extends React.Component {
     addtowatchlist(type) {
         if (this.props.user) {
             if (type === "watched") {
-                console.log('watched ran!');
+                
                 axios.post('/profile', {username: this.props.user, moviename: this.props.singlemovie.title, score: 11, favorites: "null"})
                     .then(function (response) {
                         console.log(response);
@@ -28,7 +28,7 @@ class SingleMovie extends React.Component {
                         console.log(error);
                     });
             } else if (type === "favorite") {
-                console.log('fasvorite ran!');
+
                 axios.post('/profile', {username: this.props.user, moviename: this.props.singlemovie.title, score: 11, favorites: "true"})
                     .then(function (response) {
                         console.log(response);
@@ -37,7 +37,7 @@ class SingleMovie extends React.Component {
                         console.log(error);
                     });
             } else if (typeof type === "object") {
-                    console.log('score ran!', type.target.value);
+
                 axios.post('/profile', {username: this.props.user, moviename: this.props.singlemovie.title, score: type.target.value, favorites: "null"})
                     .then(function (response) {
                         console.log(response);
@@ -52,7 +52,7 @@ class SingleMovie extends React.Component {
     }
 
     render() {
-        console.log(this.props, "hello earthlings!");
+
         return (
             <div className="sectionsetup">
              {this.props.singlemovie.title || this.props.singlemovie.name ? 
@@ -72,11 +72,9 @@ class SingleMovie extends React.Component {
                 width: 73%; background-size: cover; }`}}>
                </style>
                </div>
-               {/* {this.props.singlemovie.title ? <InYouTube title={this.props.singlemovie.title ? this.props.singlemovie.title : this.props.singlemovie.name}/> :<p>Hi</p>} */}
                 <InYouTube title={this.props.singlemovie.title ? this.props.singlemovie.title : this.props.singlemovie.name}/>
                 <button className="addmovieL" onClick={() => this.addtowatchlist("watched")}>Add to watched list</button>
                 <button className="addmovieF" onClick={() => this.addtowatchlist("favorite")}>Add to Favorites</button>
-                {/* <button className="addmovieG">Grade Movie</button> */}
                 <select className="addmovieG" onChange={this.addtowatchlist}>
                     <option>Rate Movie</option>
                     {this.state.grades.map((grade, index) =>(

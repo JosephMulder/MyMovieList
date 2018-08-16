@@ -1,7 +1,5 @@
 import React from 'react';
 import YouTube from 'react-youtube';
-import axios from 'axios';
-import searchYouTube from "youtube-search-api-with-axios";
 import YTSearch from 'youtube-api-search';
 
 class InYouTube extends React.Component {

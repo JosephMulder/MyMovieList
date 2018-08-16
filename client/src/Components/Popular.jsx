@@ -24,16 +24,6 @@ class Popular extends Component {
 
     veiwSingleMovie(info) {
        this.props.veiwMovie(info);
-        // if (this.state.moviedescription) {
-        //   var opposite = !this.state.moviedescription;
-        // } else {
-        //   var opposite = this.state.moviedescription;
-        // }
-        // this.setState({
-        //     singlemovie: info,
-        //     moviedescription: opposite
-        // })
-        // console.log('thisis the state hurray!', this.state);
     }
 
     getMovies() {
@@ -127,16 +117,4 @@ class Popular extends Component {
 }
 
 export default Popular;
-
-
-//  <div>
-// <div id="lit"></div>
-// <style dangerouslySetInnerHTML={{__html: `
-// #lit { background: url(https://image.tmdb.org/t/p/w1280${this.state.movies[0].backdrop_path}); background-size: cover; filter: blur(3px) grayscale(80%); position: fixed; 
-// height: 600px; width: 1000px;
-// }`}}>
-// </style>
-// <div className="fixme"><h4>THIS IS A MOVIE!!!</h4></div>
-// {/* <img src={`https://image.tmdb.org/t/p/w1280${this.state.movies[0].backdrop_path}`} /> */}
-// </div>
 

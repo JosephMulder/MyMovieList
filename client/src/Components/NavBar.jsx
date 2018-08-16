@@ -17,7 +17,10 @@ class NavBar extends Component {
       });
     }
 
-    search() {
+    search(event) {
+        console.log('this runs!', this.state.term);
+        event.preventDefault();
+        event.stopPropagation();
         this.props.searchrequest(this.state.term);
     }
 
@@ -43,15 +46,20 @@ class NavBar extends Component {
     </NavDropdown> */}
   </Nav>
               <Navbar.Collapse>
-    {/* What were going to do is have a anonomous function that conditionally invokes two different things based on if someone is logged in */}
               <Button id="buttoned" onClick={() => (this.props.loggedIn ? this.props.logout(): this.props.loginbutton())}>{this.props.loggedIn ? <div>Sign Out</div> : <div>Login</div>}</Button>
-              {/* <Button id="buttoned" onClick={this.props.loginbutton}>{this.props.loggedIn ? <div>Sign Out</div> : <div>Login</div>}</Button> */}
                 <Navbar.Form pullRight>
                         {this.props.searcherror ? <div>Movie was not found</div> : <div></div>}
-                    <FormGroup>
+{/*                         
+                    <FormGroup onSubmit={this.search}>
                         <FormControl type="text" placeholder="Search" value={this.state.term} onChange={this.onChange}/>
+
+                        <Button type="submit" onClick={this.search}>Search</Button>
                     </FormGroup>{' '}
-                    <Button type="submit" onClick={this.search}>Search</Button>
+                     */}
+                    <form onSubmit={this.search}>
+                        <input  className="inputsearch" type="text" placeholder="Search" value={this.state.term} onChange={this.onChange}/>
+                        <button className="buttonsearch" type="submit" >Search</button>
+                    </form>
                 </Navbar.Form>
               </Navbar.Collapse>
             </Navbar>
